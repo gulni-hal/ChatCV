@@ -60,14 +60,16 @@
 
 .message-bubble.user {
   align-self: flex-end;
+  font-size: 1.2rem;
   background-color: #ABC4AA;
   color: white;
   border-bottom-right-radius: 2px;
 }
 
 .message-bubble.bot {
+  font-size: 1.2rem;
   align-self: flex-start;
-  background-color: #f1f1f1;
+  background-color: #ffffff;
   color: #212529;
   border-bottom-left-radius: 2px;
   border: 1px solid #e0e0e0;
@@ -76,7 +78,7 @@
 /* Giriş Alanı Alt Kısım */
 .input-area {
   padding: 20px 30px;
-  background-color: #f6ebd9;
+  background-color: #ffffff;
   border-top: 1px solid #eee;
   display: flex;
   gap: 15px;
