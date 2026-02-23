@@ -91,17 +91,16 @@ function App() {
           >
             <h2>Welcome to My Personalized Chatbot!</h2>
             <p>
-              Hi! My name is Gulnihal Eruslu. I'm currently a student in
-              Information System Engineering.
+              Hi! My name is Gülnihal Eruslu, and I'm a student in Information
+              Systems Engineering.
             </p>
             <p>
               {" "}
-              I built this Rag Chatbot for you get to know me better via a
-              chatbot! Feel free to ask anything or check out my CV! To learn
-              more about the chatbot or my other projects, check out my GitHub
-              profile!
+              I built this RAG-based chatbot to help you get to know me better.
+              You can ask questions about my education, projects, and
+              experience. To learn more about this project or my other projects,
+              check out my GitHub profile!
             </p>
-
             <div className="modal-links">
               <a
                 href="https://github.com/gulni-hal"
@@ -120,6 +119,15 @@ function App() {
                 &nbsp; View on GitHub
               </a>
             </div>
+            <p>
+              For the best results, please use English. However, you can also
+              use Turkish if you prefer.
+            </p>
+            <p>
+              To get started quickly, you can choose from the suggested
+              questions!
+            </p>
+
             <button
               className="modal-close-btn"
               onClick={() => setIsModalOpen(false)}
