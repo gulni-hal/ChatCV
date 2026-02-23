@@ -145,3 +145,91 @@
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
 }
+/* Modal Arka Plan Karartma */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Arka planı karartır */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Her şeyin üstünde görünmesi için */
+}
+
+/* Modal Kutusu */
+.modal-content {
+  background-color: #F3DEBA; /* Senin temanın ana rengi */
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  border: 2px solid #675D50;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content h2 {
+  color: #675D50;
+  margin-top: 0;
+}
+
+.modal-content p {
+  color: #212529;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+/* Kapatma Butonu */
+.modal-close-btn {
+  margin-top: 20px;
+  padding: 12px 30px;
+  background-color: #675D50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.modal-close-btn:hover {
+  background-color: #ABC4AA;
+}
+
+/* Hafif açılma efekti */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.chat-header {
+  padding: 15px 30px;
+  background-color: #675D50;
+  color: white;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between;  <-- Bu satırı silebilir veya kalabilir, 
+     içerideki grup sayesinde artık birbirlerinden uzaklaşmayacaklar */
+}
+
+.header-left-group {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Logo ile yazı arasındaki boşluğu buradan ayarla */
+}
+
+.chat-logo {
+  height: 40px; 
+  width: auto;
+  object-fit: contain;
+}
+
+.chat-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  white-space: nowrap; /* Yazının alt satıra geçmesini engeller */
+}
