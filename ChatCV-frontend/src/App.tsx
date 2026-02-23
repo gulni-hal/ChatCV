@@ -8,7 +8,13 @@ interface Message {
 
 function App() {
   const [question, setQuestion] = useState("");
-  const [chatHistory, setChatHistory] = useState<Message[]>([]);
+  // const [chatHistory, setChatHistory] = useState<Message[]>([]);
+  const [chatHistory, setChatHistory] = useState<Message[]>([
+    {
+      sender: "bot",
+      text: "Hi! I'm an AI chatbot specifically designed to answer questions about Turkish Musiki history. Are you ready to start?",
+    },
+  ]);
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -115,7 +121,7 @@ function App() {
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && sendQuestion()}
-            placeholder="Ask your question!"
+            placeholder="Ask your questions!"
           />
           <button onClick={sendQuestion} disabled={isLoading}>
             Send

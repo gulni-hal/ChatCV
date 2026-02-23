@@ -88,6 +88,7 @@
   flex: 1;
   padding: 15px 20px;
   border: 2px solid #e0e0e0;
+  border-color: #ABC4AA;
   border-radius: 12px;
   font-size: 1.2rem;
   transition: border-color 0.3s;
