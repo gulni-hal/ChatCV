@@ -13,7 +13,7 @@ function App() {
   const [chatHistory, setChatHistory] = useState<Message[]>([
     {
       sender: "bot",
-      text: "Hi! I'm an AI chatbot specifically designed to answer questions about Turkish Musiki history. Are you ready to start?",
+      text: "Hi! I'm an AI chatbot designed to answer questions about Gülnihal's CV.  I can only respond to questions related to this information. Are you ready to start?",
     },
   ]);
   const [isLoading, setIsLoading] = useState(false);
@@ -68,7 +68,12 @@ function App() {
     "Osmanlı dönemi müzik eğitimi nasıldı?",
     "PDF'e göre önemli bestekarlar kimlerdir?",
     "Geleneksel Türk müziği türleri nelerdir?",
-    "Geleneksel Türk müziği türleri nelerdir?",
+    "Geleneksel Türk müziği türleri nelerdir?1",
+    "Geleneksel Türk müziği türleri nelerdir?2",
+    "Geleneksel Türk müziği türleri nelerdir?3",
+    "Geleneksel Türk müziği türleri nelerdir?4",
+    "Geleneksel Türk müziği türleri nelerdir?5",
+    "Geleneksel Türk müziği türleri nelerdir?6",
   ];
   const handleQuickSearch = async (query: string) => {
     setQuestion(query);
@@ -158,14 +163,14 @@ function App() {
         {/* {chatHistory.length === 0 && (  */}
         {/* // Sadece sohbet başlamamışken gösterir */}
         <div className="suggestions-container">
-          {SUGGESTED_QUESTIONS
-            // Eğer soru chatHistory içinde daha önce sorulmuşsa onu listeden çıkar
-            .filter(
-              (q) =>
-                !chatHistory.some(
-                  (msg) => msg.sender === "user" && msg.text === q,
-                ),
-            )
+          {SUGGESTED_QUESTIONS.filter(
+            (q) =>
+              !chatHistory.some(
+                (msg) => msg.sender === "user" && msg.text === q,
+              ),
+          )
+            .sort(() => 0.5 - Math.random())
+            .slice(0, 5)
             .map((q, index) => (
               <button
                 key={index}
