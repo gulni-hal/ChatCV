@@ -13,7 +13,7 @@ function App() {
   const [chatHistory, setChatHistory] = useState<Message[]>([
     {
       sender: "bot",
-      text: "Hi! I'm an AI chatbot designed to answer questions about Gülnihal's CV.  I can only respond to questions related to this information. Are you ready to start?",
+      text: "Hi! I'm an AI chatbot designed to answer questions about Gülnihal's CV. I can provide information about her education, experience, projects, and courses.",
     },
   ]);
   const [isLoading, setIsLoading] = useState(false);
@@ -64,16 +64,31 @@ function App() {
     }
   };
   const SUGGESTED_QUESTIONS = [
-    "who inspired the Turkish Musiki?",
-    "Osmanlı dönemi müzik eğitimi nasıldı?",
-    "PDF'e göre önemli bestekarlar kimlerdir?",
-    "Geleneksel Türk müziği türleri nelerdir?",
-    "Geleneksel Türk müziği türleri nelerdir?1",
-    "Geleneksel Türk müziği türleri nelerdir?2",
-    "Geleneksel Türk müziği türleri nelerdir?3",
-    "Geleneksel Türk müziği türleri nelerdir?4",
-    "Geleneksel Türk müziği türleri nelerdir?5",
-    "Geleneksel Türk müziği türleri nelerdir?6",
+    "Who is her reference?",
+    "Where does Gülnihal study?",
+    "What is her GPA?",
+    "When is she expected to graduate?",
+    "What courses has Gülnihal attended?",
+    "What did she study at the Cybersecurity Academy?",
+    "What professional experience does she have?",
+    "Tell me about her internship.",
+    "What did she do at Hamle Teknoloji Grup?",
+    "What was her role during the İşkur Youth Program?",
+    "What does she do at the Kocaeli University Central Library?",
+    "Has she worked with real-world systems?",
+    "What kind of backend experience does she have?",
+    "What kind of frontend experience does she have?",
+    "Does she have database experience?",
+    "What is the Social Network Analysis application about?",
+    // "What is Tarif Durağı?",
+    "What technologies were used in the Pomodoro Timer?",
+    "What features does the Pomodoro app include?",
+    "Game design experience",
+    "What is the Site Management Automation system?",
+    "What programming languages does she use?",
+    "What languages does she speak?",
+    "What is Gülnihal's contact information?",
+    "What is her GitHub profile link?",
   ];
   const handleQuickSearch = async (query: string) => {
     setQuestion(query);

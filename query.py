@@ -29,6 +29,8 @@ def get_answer(question: str, chat_history: Optional[List[Dict[str, str]]] = Non
         full_question = f"{history_context}\n\nCurrent question: {question}"
     else:
         full_question = question
+    
+    
 
     # Modern LCEL çağrısı
     result = qa_chain.invoke(full_question)
