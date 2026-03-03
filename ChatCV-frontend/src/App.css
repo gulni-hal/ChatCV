@@ -3,21 +3,160 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100dvh;
   width: 100vw;
 }
 
 /* Chat Paneli - Daha geniş ve gölgeli */
+/* Mevcut .chat-container kısmını bununla güncelle */
 .chat-container {
   display: flex;
   flex-direction: column;
-  width: 90%;
-  max-width: 1000px; /* Telefon görüntüsünden kurtulmak için genişletildi */
-  height: 85vh;
+  width: 95%; /* Mobilde biraz daha geniş */
+  max-width: 1000px;
+  height: 90vh; /* Mobilde daha fazla alan kullan */
   background-color: #F3DEBA;
   border-radius: 16px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .chat-container {
+    width: 100%;
+    height: 100dvh; /* Mobilde tam ekran */
+    border-radius: 0; /* Köşe yuvarlaklarını kaldır */
+  }
+}
+/* Tablet ve Telefonlar için genel düzenlemeler */
+@media (max-width: 768px) {
+  .chat-header {
+    padding: 10px 15px;
+  }
+
+  .chat-header h1 {
+    font-size: 1.2rem;
+  }
+
+  .messages-container {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .message-bubble {
+    max-width: 85%; /* Mobilde balonlar daha geniş olabilir */
+    font-size: 1rem !important; /* App.tsx içindeki 1.2rem'i ezer */
+    padding: 10px 15px;
+  }
+
+  .input-area {
+  padding: 15px;
+  background-color: #ffffff;
+  border-top: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0; /* küçülmesini engeller */
+}
+
+  .input-area input {
+  flex: 1;
+  min-width: 0; /* overflow engeller */
+  padding: 12px 16px;
+  border: 2px solid #ABC4AA;
+  border-radius: 12px;
+  font-size: 1rem;
+}
+
+ .input-area button {
+  flex-shrink: 0;
+  padding: 0 18px;
+  height: 44px;
+  background-color: #ABC4AA;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+}
+
+@media (max-width: 480px) {
+
+  .input-area {
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .input-area input {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .input-area button {
+    font-size: 0.95rem;
+    padding: 0 14px;
+  }
+}
+@media (max-width: 600px) {
+  .suggestions-container {
+    display: flex;
+    flex-wrap: nowrap; /* Yan yana diz */
+    overflow-x: auto; /* Yatay kaydırma ekle */
+    justify-content: flex-start;
+    padding: 10px;
+    -webkit-overflow-scrolling: touch;
+    gap: 8px;
+  }
+
+  .suggestion-card {
+    flex: 0 0 auto; /* Kartların küçülmesini engelle */
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+  
+  /* Kaydırma çubuğunu gizle (isteğe bağlı) */
+  .suggestions-container::-webkit-scrollbar {
+    display: none;
+  }
+}@media (max-width: 600px) {
+  .suggestions-container {
+    display: flex;
+    flex-wrap: nowrap; /* Yan yana diz */
+    overflow-x: auto; /* Yatay kaydırma ekle */
+    justify-content: flex-start;
+    padding: 10px;
+    -webkit-overflow-scrolling: touch;
+    gap: 8px;
+  }
+
+  .suggestion-card {
+    flex: 0 0 auto; /* Kartların küçülmesini engelle */
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+  
+  /* Kaydırma çubuğunu gizle (isteğe bağlı) */
+  .suggestions-container::-webkit-scrollbar {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  .modal-content {
+    width: 95%;
+    padding: 20px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  .modal-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .modal-content p {
+    font-size: 0.95rem;
+  }
 }
 
 /* Üst Başlık */
