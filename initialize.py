@@ -7,6 +7,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
+from langchain_huggingface import HuggingFaceInferenceAPIEmbeddings
 
 from dotenv import load_dotenv
 import os
@@ -32,7 +33,8 @@ def initialize_qa_system():
     docs = splitter.split_documents(pages)
 
     # Embeddings
-    embeddings = HuggingFaceEmbeddings(
+    embeddings = HuggingFaceInferenceAPIEmbeddings(
+        api_key=os.getenv("HF_TOKEN"), 
         model_name="sentence-transformers/all-MiniLM-L6-v2"
     )
 
