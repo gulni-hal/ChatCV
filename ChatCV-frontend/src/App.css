@@ -1,4 +1,4 @@
-/* Ana ekranı kaplayan kapsayıcı */
+/* ana ekran */
 .chat-page {
   display: flex;
   justify-content: center;
@@ -7,8 +7,7 @@
   width: 100vw;
 }
 
-/* Chat Paneli - Daha geniş ve gölgeli */
-/* Mevcut .chat-container kısmını bununla güncelle */
+/* chat panel*/
 .chat-container {
   display: flex;
   flex-direction: column;
@@ -25,11 +24,11 @@
 @media (max-width: 768px) {
   .chat-container {
     width: 100%;
-    height: 100dvh; /* Mobilde tam ekran */
-    border-radius: 0; /* Köşe yuvarlaklarını kaldır */
+    height: 100dvh; /* mobil icin */
+    border-radius: 0; /* deleting corner pieces */
   }
 }
-/* Tablet ve Telefonlar için genel düzenlemeler */
+/* responsive */
 @media (max-width: 768px) {
   .chat-header {
     padding: 10px 15px;
@@ -45,8 +44,8 @@
   }
 
   .message-bubble {
-    max-width: 85%; /* Mobilde balonlar daha geniş olabilir */
-    font-size: 1rem !important; /* App.tsx içindeki 1.2rem'i ezer */
+    max-width: 85%; /* responsive icin */
+    font-size: 1rem !important; 
     padding: 10px 15px;
   }
 
@@ -102,8 +101,8 @@
 @media (max-width: 600px) {
   .suggestions-container {
     display: flex;
-    flex-wrap: nowrap; /* Yan yana diz */
-    overflow-x: auto; /* Yatay kaydırma ekle */
+    flex-wrap: nowrap; /* yan yana diz */
+    overflow-x: auto; /* yatay kaydırma ekle mobil icin */
     justify-content: flex-start;
     padding: 10px;
     -webkit-overflow-scrolling: touch;
@@ -111,20 +110,20 @@
   }
 
   .suggestion-card {
-    flex: 0 0 auto; /* Kartların küçülmesini engelle */
+    flex: 0 0 auto; /* kartların küçülmesini engelle */
     font-size: 0.9rem;
     padding: 8px 15px;
   }
   
-  /* Kaydırma çubuğunu gizle (isteğe bağlı) */
+  /* kaydırma çubuğunu gizleme */
   .suggestions-container::-webkit-scrollbar {
     display: none;
   }
 }@media (max-width: 600px) {
   .suggestions-container {
     display: flex;
-    flex-wrap: nowrap; /* Yan yana diz */
-    overflow-x: auto; /* Yatay kaydırma ekle */
+    flex-wrap: nowrap; /* yan yana diz */
+    overflow-x: auto; /* yatay kaydırma ekle */
     justify-content: flex-start;
     padding: 10px;
     -webkit-overflow-scrolling: touch;
@@ -132,12 +131,12 @@
   }
 
   .suggestion-card {
-    flex: 0 0 auto; /* Kartların küçülmesini engelle */
+    flex: 0 0 auto; /* kartların küçülmesini engelle */
     font-size: 0.9rem;
     padding: 8px 15px;
   }
   
-  /* Kaydırma çubuğunu gizle (isteğe bağlı) */
+  /* kaydırma çubuğunu gizle */
   .suggestions-container::-webkit-scrollbar {
     display: none;
   }
@@ -159,7 +158,7 @@
   }
 }
 
-/* Üst Başlık */
+/* ust Başlık */
 .chat-header {
   padding: 20px 30px;
   background-color: #675D50;
@@ -175,7 +174,7 @@
   font-weight: 600;
 }
 
-/* Mesaj Alanı */
+/* mesaj alanı */
 .messages-container {
   flex: 1;
   padding: 30px;
@@ -184,10 +183,10 @@
   flex-direction: column;
   gap: 20px;
   background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
-  background-size: 20px 20px; /* Hafif noktalı arka plan */
+  background-size: 20px 20px; /* hafif noktalı arka plan */
 }
 
-/* Mesaj Balonları */
+/* mesaj Balonları */
 .message-bubble {
   max-width: 70%;
   padding: 14px 20px;
@@ -214,7 +213,7 @@
   border: 1px solid #e0e0e0;
 }
 
-/* Giriş Alanı Alt Kısım */
+
 .input-area {
   padding: 20px 30px;
   background-color: #ffffff;
@@ -284,7 +283,7 @@
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
 }
-/* Modal Arka Plan Karartma */
+/* modal Arka Plan Karartma */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -300,7 +299,7 @@
 
 /* Modal Kutusu */
 .modal-content {
-  background-color: #F3DEBA; /* Senin temanın ana rengi */
+  background-color: #F3DEBA; 
   padding: 40px;
   border-radius: 20px;
   max-width: 500px;
@@ -322,7 +321,7 @@
   font-size: 1.1rem;
 }
 
-/* Kapatma Butonu */
+/* kapatma Butonu */
 .modal-close-btn {
   margin-top: 20px;
   padding: 12px 30px;
@@ -351,14 +350,13 @@
   color: white;
   display: flex;
   align-items: center;
-  /* justify-content: space-between;  <-- Bu satırı silebilir veya kalabilir, 
-     içerideki grup sayesinde artık birbirlerinden uzaklaşmayacaklar */
+ 
 }
 
 .header-left-group {
   display: flex;
   align-items: center;
-  gap: 12px; /* Logo ile yazı arasındaki boşluğu buradan ayarla */
+  gap: 12px; 
 }
 
 .chat-logo {
@@ -370,5 +368,5 @@
 .chat-header h1 {
   margin: 0;
   font-size: 1.5rem;
-  white-space: nowrap; /* Yazının alt satıra geçmesini engeller */
+  white-space: nowrap; 
 }

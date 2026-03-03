@@ -9,7 +9,7 @@ interface Message {
 
 function App() {
   const [question, setQuestion] = useState("");
-  // const [chatHistory, setChatHistory] = useState<Message[]>([]);
+
   const [chatHistory, setChatHistory] = useState<Message[]>([
     {
       sender: "bot",
@@ -18,7 +18,7 @@ function App() {
   ]);
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const [isModalOpen, setIsModalOpen] = useState(true); // Sayfa açıldığında açık başlar
+  const [isModalOpen, setIsModalOpen] = useState(true);
 
   // Yeni mesaj geldiğinde otomatik aşağı kaydır
   const scrollToBottom = () => {
@@ -44,7 +44,7 @@ function App() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           question: currentQuestion,
-          chat_history: [], // İleride buraya gerçek geçmişi ekleyebilirsin
+          chat_history: [],
         }),
       });
 
@@ -92,10 +92,6 @@ function App() {
   ];
   const handleQuickSearch = async (query: string) => {
     setQuestion(query);
-    // Not: setQuestion asenkron olduğu için sendQuestion içinde 'question'
-    // hala boş olabilir. Bu yüzden sendQuestion'ı parametre alacak şekilde
-    // hafifçe düzenlemek veya useEffect kullanmak gerekebilir.
-    // En basit yol: sendQuestion'ı mevcut question state'i ile tetiklemek.
   };
 
   return (

@@ -8,19 +8,19 @@ from fastapi.middleware.cors import CORSMiddleware
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Startup: Initialize QA system once
+    # initialize message
     print("Initializing QA system...")
     app.state.qa_chain = initialize_qa_system()
     print("QA system initialized successfully!")
     yield
-    # Shutdown: cleanup if needed
+    # shutdown message
     print("Shutting down...")
 
 app = FastAPI(lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Replace with specific origins in production
+    allow_origins=["*"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

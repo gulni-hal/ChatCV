@@ -16,7 +16,7 @@ def get_answer(question: str, chat_history: Optional[List[Dict[str, str]]] = Non
     if qa_chain is None:
         raise ValueError("QA chain not initialized.")
 
-    # Chat history formatla
+    # formatting chat history
     history_context = ""
     if chat_history:
         history_context = "\n".join([
@@ -24,7 +24,7 @@ def get_answer(question: str, chat_history: Optional[List[Dict[str, str]]] = Non
             for qa in chat_history[-3:]
         ])
 
-    # Eğer history varsa soruya ekle
+    # history part
     if history_context:
         full_question = f"{history_context}\n\nCurrent question: {question}"
     else:
@@ -32,7 +32,7 @@ def get_answer(question: str, chat_history: Optional[List[Dict[str, str]]] = Non
     
     
 
-    # Modern LCEL çağrısı
+    # call
     result = qa_chain.invoke(full_question)
 
     return result
