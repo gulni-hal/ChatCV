@@ -5,6 +5,8 @@ from contextlib import asynccontextmanager
 from query import get_answer
 from initialize import initialize_qa_system
 from fastapi.middleware.cors import CORSMiddleware
+import uvicorn
+import os
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -47,3 +49,9 @@ async def query_endpoint(request: QueryRequest):
         return {"answer": answer}
     except Exception as e:
         return {"error": str(e)}
+
+
+if __name__ == "__main__":
+    # Render'ın atadığı portu al, yoksa 8000 kullan
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)

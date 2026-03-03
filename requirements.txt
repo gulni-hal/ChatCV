@@ -9,5 +9,6 @@ langchain-core
 python-dotenv
 chromadb
 pypdf
+os
 sentence-transformers
 huggingface-hub
