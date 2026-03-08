@@ -14,33 +14,22 @@ import os
 
 def initialize_qa_system():
     load_dotenv()
-    api_key = os.getenv("GROQ_API_KEY")
 
-    # Absolute path
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    pdf_path = os.path.join(current_dir, "assets", "deneme7SON.pdf")
-
-    # Load PDF
-    loader = PyPDFLoader(pdf_path)
-    pages = loader.load()
-
-    # Split text
-    splitter = RecursiveCharacterTextSplitter(
-        chunk_size=1000,
-        chunk_overlap=150
-    )
-    docs = splitter.split_documents(pages)
-
-    # Embeddings
+    # Embedding modeli (sadece query için)
     embeddings = HuggingFaceEmbeddings(
-        model_name="sentence-transformers/all-MiniLM-L6-v2"
+        model_name="sentence-transformers/all-MiniLM-L6-v2",
+        model_kwargs={"token": os.getenv("HF_TOKEN")}
     )
 
+    # Hazır Chroma DB'yi yükle
     vectordb = Chroma(
         persist_directory="./chroma_db",
         embedding_function=embeddings
     )
-    retriever = vectordb.as_retriever()
+
+    retriever = vectordb.as_retriever(
+        search_kwargs={"k": 3}
+    )
 
     # Prompt
     TEMPLATE = """
