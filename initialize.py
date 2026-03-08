@@ -36,7 +36,10 @@ def initialize_qa_system():
         model_name="sentence-transformers/all-MiniLM-L6-v2"
     )
 
-    vectordb = Chroma.from_documents(docs, embedding=embeddings)
+    vectordb = Chroma(
+        persist_directory="./chroma_db",
+        embedding_function=embeddings
+    )
     retriever = vectordb.as_retriever()
 
     # Prompt
